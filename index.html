@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Weather</h1>
+      <form id="search-form" autocomplete="off">
+        <input id="city-input" type="text" placeholder="Add a city..." required />
+        <button type="submit">Add</button>
+      </form>
+      <div id="status"></div>
+    </header>
+
+    <div id="locations" class="locations"></div>
+    <p id="empty-state" class="empty-state">No locations yet — add a city above.</p>
+  </div>
+
+  <template id="location-card-template">
+    <section class="card">
+      <button class="remove-btn" type="button" aria-label="Remove location">&times;</button>
+      <h2 class="location-name"></h2>
+      <div class="current">
+        <span class="current-temp temp"></span>
+        <span class="current-desc desc"></span>
+      </div>
+      <p class="meta">
+        Feels like <span class="feels-like"></span> ·
+        Wind <span class="wind-speed"></span> km/h ·
+        Humidity <span class="humidity"></span>%
+      </p>
+      <div class="forecast"></div>
+    </section>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
